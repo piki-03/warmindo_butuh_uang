@@ -1,0 +1,38 @@
+name: warmindo_butuh_uang
+description: "Aplikasi Pemesanan & Dapur KDS Warmindo Butuh Uang berbasis Flutter dan Supabase"
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_riverpod: ^2.5.1
+  google_fonts: ^6.2.1
+  flutter_animate: ^4.5.0
+  supabase_flutter: ^2.5.6
+  intl: ^0.19.0
+  cached_network_image: ^3.3.1
+  mobile_scanner: ^7.4.2
+  app_links: ^6.3.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  fonts:
+    - family: BebasNeue
+      fonts:
+        - asset: lib/assets/fonts/BebasNeue-Regular.ttf
+
+    - family: PlusJakartaSans
+      fonts:
+        - asset: lib/assets/fonts/PlusJakartaSans-Regular.ttf
+        - asset: lib/assets/fonts/PlusJakartaSans-Bold.ttf
+          weight: 700
