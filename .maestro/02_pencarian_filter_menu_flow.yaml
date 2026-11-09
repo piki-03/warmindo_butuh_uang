@@ -1,0 +1,43 @@
+appId: com.example.warmindo_butuh_uang
+---
+# Fitur 2: Eksplorasi Menu, Filter Kategori, Pencarian, & Gacha Menu
+- launchApp:
+    clearState: true
+
+# Tunggu dialog sambutan awal
+- extendedWaitUntil:
+    visible: "SELAMAT DATANG!"
+    timeout: 15000
+
+- tapOn: "1"
+- tapOn: "Lanjut dengan Meja #1"
+
+# 1. Pastikan berada di halaman Menu
+- extendedWaitUntil:
+    visible: "WARMINDO BUTUH UANG"
+    timeout: 10000
+- assertVisible: "Semua"
+
+# 2. Filter Kategori: Minuman Dingin
+- tapOn: "Minuman Dingin"
+- assertVisible: "Es Teh Manis Jumbo"
+
+# 3. Filter Kategori: Kembali ke Semua
+- tapOn: "Semua"
+
+# 4. Pencarian Menu: Cari "Aceh"
+- tapOn: "Cari Indomie, Nasi, atau Minuman Dingin..."
+- inputText: "Aceh"
+- hideKeyboard
+- assertVisible: "Indomie Goreng Aceh Pedas"
+
+# 5. Hapus pencarian
+- eraseText: 10
+- hideKeyboard
+
+# 6. Fitur Interaktif: Putar Gacha Menu
+- tapOn: "PUTAR GACHA MENU"
+- extendedWaitUntil:
+    visible: "GACHA MENU PILIHAN!"
+    timeout: 5000
+- tapOn: "Tolak Takdir"

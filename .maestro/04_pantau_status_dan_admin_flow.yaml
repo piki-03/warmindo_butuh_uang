@@ -1,0 +1,50 @@
+appId: com.example.warmindo_butuh_uang
+---
+# Fitur 4: Pelacakan Status Pesanan (Riwayat) & Akses Otentikasi Admin
+- launchApp:
+    clearState: true
+
+# Inisialisasi Meja
+- extendedWaitUntil:
+    visible: "SELAMAT DATANG!"
+    timeout: 15000
+
+- tapOn: "5"
+- tapOn: "Lanjut dengan Meja #5"
+
+# 1. Pindah ke Tab Riwayat (Status Pesanan)
+- extendedWaitUntil:
+    visible: "WARMINDO BUTUH UANG"
+    timeout: 10000
+
+- tapOn: "Riwayat"
+- extendedWaitUntil:
+    visible: "STATUS PESANAN"
+    timeout: 5000
+- assertVisible: "Meja #5.*"
+
+# 2. Pindah ke Tab Profil (Gate Khusus Admin)
+- tapOn: "Profil"
+- extendedWaitUntil:
+    visible: "PROFIL & IDENTITAS MEJA"
+    timeout: 5000
+- assertVisible: "AREA ADMIN"
+- assertVisible: "LOGIN ADMIN"
+
+# 3. Masuk ke Form Login Admin
+- tapOn: "LOGIN ADMIN"
+
+# 4. Verifikasi Tampilan Form Login Admin
+- extendedWaitUntil:
+    visible: "LOGIN ADMIN"
+    timeout: 5000
+- assertVisible: "Khusus Pemilik & Staff Warmindo"
+- assertVisible: "Email Admin"
+- assertVisible: "Password"
+- assertVisible: "MASUK SEBAGAI ADMIN"
+
+# 5. Navigasi Kembali ke Layar Sebelumnya
+- back
+- extendedWaitUntil:
+    visible: "PROFIL & IDENTITAS MEJA"
+    timeout: 5000

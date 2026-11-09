@@ -1,0 +1,30 @@
+appId: com.example.warmindo_butuh_uang
+---
+# Fitur 1: Inisialisasi & Pemilihan Nomor Meja Pelanggan
+- launchApp:
+    clearState: true
+
+# 1. Tunggu hingga dialog selamat datang muncul (Cold Start Timeout)
+- extendedWaitUntil:
+    visible: "SELAMAT DATANG!"
+    timeout: 15000
+
+- assertVisible: "Warmindo Butuh Uang"
+- assertVisible: "Pilih Nomor Meja:"
+
+# 2. Pilih Meja Nomor 3
+- tapOn: "3"
+
+# 3. Input Nama Pemesan
+- tapOn: "Nama kamu (opsional)..."
+- inputText: "Budi Santoso"
+- hideKeyboard
+
+# 4. Konfirmasi dan masuk ke katalog
+- tapOn: "Lanjut dengan Meja #3"
+
+# 5. Verifikasi berhasil masuk ke menu katalog dengan meja terpilih
+- extendedWaitUntil:
+    visible: "WARMINDO BUTUH UANG"
+    timeout: 10000
+- assertVisible: ".*MEJA #3.*"

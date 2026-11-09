@@ -1,0 +1,61 @@
+appId: com.example.warmindo_butuh_uang
+---
+# Fitur 3: Kustomisasi Indomie, Keranjang Belanja, & Pengiriman Pesanan (Checkout)
+- launchApp:
+    clearState: true
+
+# Inisialisasi Meja
+- extendedWaitUntil:
+    visible: "SELAMAT DATANG!"
+    timeout: 15000
+
+- tapOn: "2"
+- tapOn: "Lanjut dengan Meja #2"
+
+# 1. Pilih Indomie dari katalog
+- extendedWaitUntil:
+    visible: "WARMINDO BUTUH UANG"
+    timeout: 10000
+
+- tapOn: "Indomie Goreng Original + Telur"
+
+# 2. Kustomisasi Indomie di Bottom Sheet
+- extendedWaitUntil:
+    visible: "KEMATANGAN MIE"
+    timeout: 5000
+
+- tapOn: "Kering / Standar"
+- tapOn: "Dadar"
+
+# 3. Tambahkan catatan warkop
+- tapOn: "Contoh: Sayur sawi dibanyakin, bawang goreng dipisah..."
+- inputText: "Sayur sawi dibanyakin bang"
+- hideKeyboard
+
+# 4. Konfirmasi masuk keranjang
+- tapOn: "MASUKKAN KERANJANG"
+
+# 5. Buka Keranjang melalui Navigasi Bawah
+- tapOn: "Keranjang"
+
+# 6. Verifikasi isi keranjang
+- extendedWaitUntil:
+    visible: "KERANJANG MEJA #2"
+    timeout: 5000
+- assertVisible: "Indomie Goreng Original + Telur"
+- assertVisible: "Kering / Standar"
+- assertVisible: "KIRIM PESANAN KE DAPUR"
+
+# 7. Kirim pesanan ke dapur
+- tapOn: "KIRIM PESANAN KE DAPUR"
+
+# 8. Verifikasi dialog sukses pesanan
+- extendedWaitUntil:
+    visible: "PESANAN DITERIMA DAPUR!"
+    timeout: 5000
+- tapOn: "KEMBALI KE MENU"
+
+# 9. Verifikasi kembali ke menu utama
+- extendedWaitUntil:
+    visible: "WARMINDO BUTUH UANG"
+    timeout: 5000
