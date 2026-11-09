@@ -3,8 +3,8 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SupabaseConfig {
   // URL & Anon Key Supabase Warmindo Butuh Uang
-  static const String supabaseUrl = 'https://pcigycnyhthytncdcchp.supabase.co';
-  static const String supabaseAnonKey = 'sb_publishable_1U8a7ghBGn5Q29ypjRmYkQ_IzZ2t0ry';
+  static const String supabaseUrl = '';
+  static const String supabaseAnonKey = '';
 
   /// Supabase dianggap terkonfigurasi jika URL dan key bukan placeholder.
   static bool get isConfigured =>
